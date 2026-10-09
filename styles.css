@@ -252,8 +252,7 @@ h1 {
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.project-card:first-child { grid-column: span 8; }
-.project-card:nth-child(2) { grid-column: span 4; }
+.project-card:last-child:nth-child(odd) { grid-column: 4 / span 6; }
 .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 
 .card-top { display: flex; justify-content: space-between; gap: 1rem; }
@@ -384,7 +383,7 @@ h1 {
   .hero, .section-head, .story-grid { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
   .hero-proof { min-height: 360px; }
-  .project-card, .project-card:first-child, .project-card:nth-child(2) { grid-column: span 12; }
+  .project-card, .project-card:last-child:nth-child(odd) { grid-column: span 12; }
   .principle-grid, .concept-grid { grid-template-columns: 1fr; }
   .evidence-strip { grid-template-columns: repeat(2, 1fr); }
   .evidence-item:nth-child(2) { border-right: 0; }

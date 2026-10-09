@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="NHS Workforce Capacity and Service Delivery Reporting case study.">
+<title>NHS Workforce Capacity & Service Delivery Reporting — Geeyoon Lim</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../theme.css">
+<script src="../script.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<nav class="nav-wrap" aria-label="Main navigation">
+<a class="brand" href="../index.html">
+<span class="brand-mark" aria-hidden="true">
+</span>Geeyoon Lim</a>
+<button class="menu-button" type="button" aria-expanded="false">Menu</button>
+<div class="nav-links">
+<a href="../index.html#projects">Projects</a>
+<a href="../concepts/index.html">Concepts</a>
+<a href="../index.html#approach">Approach</a>
+</div>
+<div class="social-links">
+<a href="https://github.com/ml20g2l/NHS-Workforce-Capacity-and-Service-Delivery-Reporting-Solution">GitHub ↗</a>
+</div>
+</nav>
+</header>
+<main id="main">
+<section class="container detail-hero">
+<p class="breadcrumb">
+<a href="../index.html">Home</a> / Projects / NHS Reporting</p>
+<p class="eyebrow">Operational Reporting · Data Quality</p>
+<h1 class="project-title">NHS Workforce Capacity &amp; Service Delivery Reporting</h1>
+<p class="lede">A repeatable monthly reporting process for workforce, availability, demand, and delivery performance.</p>
+<div class="button-row">
+<a class="button" href="#system">View system ↓</a>
+<a class="button secondary" href="https://github.com/ml20g2l/NHS-Workforce-Capacity-and-Service-Delivery-Reporting-Solution">View GitHub ↗</a>
+</div>
+</section>
+<div class="container evidence-strip">
+<div class="evidence-item">
+<span>Role</span>
+<strong>Data Analyst · Analytics Engineer</strong>
+</div>
+<div class="evidence-item">
+<span>Tools</span>
+<strong>Power Query · Excel · Power BI</strong>
+</div>
+<div class="evidence-item">
+<span>Scope</span>
+<strong>April 2024–March 2025</strong>
+</div>
+<div class="evidence-item">
+<span>Cohort</span>
+<strong>20 London providers</strong>
+</div>
+<div class="evidence-item">
+<span>Outcome</span>
+<strong>Repeatable reporting cycle</strong>
+</div>
+</div>
+<section class="section">
+<div class="container approach-impact">
+<div>
+<p class="eyebrow">My approach</p>
+<div class="approach-steps">
+<article class="approach-step">
+<div>
+<h3>Treat each month as a controlled intake</h3>
+<p>I applied deterministic file precedence and recorded source provenance for every reporting cycle.</p>
+</div>
+</article>
+<article class="approach-step">
+<div>
+<h3>Keep exceptions visible</h3>
+<p>I classified rows as Accepted, Review Required, or Rejected and reconciled totals across sources.</p>
+</div>
+</article>
+<article class="approach-step">
+<div>
+<h3>Serve governed management views</h3>
+<p>I used a KPI dictionary, star schema, Excel PivotTables, and Power BI views for repeatable use.</p>
+</div>
+</article>
+</div>
+</div>
+<aside class="impact-panel">
+<p class="eyebrow">Business impact</p>
+<h2>Reduced recurring report preparation work.</h2>
+<span class="impact-number">≈80%</span>
+<p>The governed refresh process replaced repeated manual preparation while preserving source lineage, KPI definitions, and exception traceability.</p>
+<p class="impact-boundary">Evidence boundary: this is a controlled portfolio workflow using public aggregate data. It is not a live NHS production deployment.</p>
+</aside>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">The problem</p>
+<h2>Monthly reporting must control change.</h2>
+</div>
+<p class="section-intro">A new file can contain revised, duplicate, or invalid records. Managers still need consistent KPI outputs.</p>
+</div>
+<div class="problem-grid">
+<article class="problem-item">
+<h3>Input control</h3>
+<p>Select the correct file version and preserve source provenance.</p>
+</article>
+<article class="problem-item">
+<h3>Data quality</h3>
+<p>Classify records as Accepted, Review Required, or Rejected.</p>
+</article>
+<article class="problem-item">
+<h3>Decision use</h3>
+<p>Give non-technical managers a stable operational view.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="system">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">How the system works</p>
+<h2>Repeatable reporting, not one-time analysis.</h2>
+</div>
+<p class="section-intro">Each reporting period enters the same controlled path.</p>
+</div>
+<div class="architecture-board" role="img" aria-label="Monthly files move through controlled intake, validation, classification, reconciliation, a reporting model, and Excel or Power BI.">
+<div class="architecture-flow">
+<div class="arch-node">
+<span>01</span>Monthly files</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>02</span>Controlled intake</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>03</span>Validation and classification</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>04</span>Reconciliation</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>05</span>Reporting model</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>06</span>Excel and Power BI</div>
+</div>
+<aside class="orchestration-rail">
+<small>Record states</small>
+<h3>Quality gate</h3>
+<ul>
+<li>Accepted</li>
+<li>Review Required</li>
+<li>Rejected</li>
+<li>Exception output</li>
+</ul>
+</aside>
+</div>
+</div>
+</section>
+<section class="section" id="dashboard">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">Decision evidence</p>
+<h2>What needs management attention?</h2>
+</div>
+<p class="section-intro">Three views move from portfolio status to service pressure and then to reporting trust.</p>
+</div>
+<div class="dashboard-stories">
+<article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">01 · Executive overview</span>
+<h3>Where is performance off track?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> Workforce, demand, delivery, pressure, and provider alerts are visible in one management view.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/nhs/overview.png" alt="NHS operations executive overview with workforce, demand, four-hour performance, pressure, and management alerts." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>March demand rose 12.6% from February while four-hour performance was 76.5%, 1.5 percentage points below the reference.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>The headline connects rising activity to delivery pressure, while the alert table identifies providers for review.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Move to provider-level demand and long-wait analysis before assigning operational action.</p>
+</div>
+</div>
+</article>
+<article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">02 · Demand and delivery</span>
+<h3>Which providers need review?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> Demand, admissions, four-hour breaches, and 12-hour waits are shown together so volume and service failure are not confused.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/nhs/demand-delivery.png" alt="NHS demand and delivery dashboard with attendances, admissions, long waits, lowest four-hour performance, and provider watchlist." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>Lewisham and Greenwich has the lowest four-hour performance at 65.7%. Barts has the largest over-four-hour count in the watchlist at 13,067.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>A low rate and a high breach count describe different operational problems.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Review rate, volume, and long waits together before prioritising provider support.</p>
+</div>
+</div>
+</article>
+<article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">03 · Data quality</span>
+<h3>Can managers trust the refresh?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> File status, record classification, reconciliation, and exceptions make the reporting boundary visible.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/nhs/data-quality.png" alt="NHS data quality dashboard with file processing, acceptance rate, flagged records, reconciliation, and exception summary." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>The refresh processed 25 files, flagged 44,044 records, and recorded zero unexpected rejections or revised periods.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>A 66.4% acceptance rate is not hidden. Review-required records remain traceable by dataset and exception type.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Publish the governed view while routing unmatched organisation codes to review.</p>
+</div>
+</div>
+</article>
+</div>
+<p class="asset-note">Source: original Power BI screenshots from the project repository. Public aggregate data; not a live NHS production deployment.</p>
+</div>
+</section>
+<section class="section">
+<div class="container"><div class="section-head"><div><p class="eyebrow">Related concepts</p><h2>Explore the controls behind the report.</h2></div></div><div class="concept-grid"><article class="concept-card"><p>Trust</p><h3>Data trust</h3><a class="concept-link" href="../concepts/data-trust.html">Explore concept →</a></article><article class="concept-card"><p>Modelling</p><h3>Analytics modelling</h3><a class="concept-link" href="../concepts/analytics-modelling.html">Explore concept →</a></article><article class="concept-card"><p>Operations</p><h3>Pipeline operations</h3><a class="concept-link" href="../concepts/pipeline-operations.html">Explore concept →</a></article><article class="concept-card"><p>Metrics</p><h3>Measurement design</h3><a class="concept-link" href="../concepts/measurement-design.html">Explore concept →</a></article></div></div>
+</section>
+<section class="section">
+<div class="container implementation-proof">
+<div class="implementation-copy">
+<span class="implementation-meta">Implementation proof · Power Query</span>
+<h3>Keep invalid and uncertain records separate.</h3>
+<p>The transformation rejects broken records, routes uncertain schema changes to review, and accepts only records that pass the controls.</p>
+<a class="button secondary" href="https://github.com/ml20g2l/NHS-Workforce-Capacity-and-Service-Delivery-Reporting-Solution/blob/main/03_power_query/m/20_fnTransformWorkforceFile.pq#L137-L156">View implementation on GitHub ↗</a>
+</div>
+<pre class="implementation-code" aria-label="Power Query record classification excerpt">
+<code>if List.Count(MissingColumns) &gt; 0 then
+    &quot;Rejected&quot;
+else if [ReportingMonth] = null or [MeasureValue] &lt; 0 then
+    &quot;Rejected&quot;
+else if List.Count(UnexpectedColumns) &gt; 0 then
+    &quot;Review Required&quot;
+else
+    &quot;Accepted&quot;</code>
+</pre>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-wrap">
+<a href="../index.html#projects">← Selected work</a>
+<span>© <span data-year>
+</span> Geeyoon Lim</span>
+</div>
+</footer>
+</body>
+</html>
+
+

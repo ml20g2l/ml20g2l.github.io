@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="E-Commerce Product Analytics case study.">
+<title>E-Commerce Product Analytics — Geeyoon Lim</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../theme.css">
+<script src="../script.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<nav class="nav-wrap" aria-label="Main navigation">
+<a class="brand" href="../index.html">
+<span class="brand-mark" aria-hidden="true">
+</span>Geeyoon Lim</a>
+<button class="menu-button" type="button" aria-expanded="false">Menu</button>
+<div class="nav-links">
+<a href="../index.html#projects">Projects</a>
+<a href="../concepts/index.html">Concepts</a>
+<a href="../index.html#approach">Approach</a>
+</div>
+<div class="social-links">
+<a href="https://github.com/ml20g2l/E-Commerce-Product-Analyics-Conversion-Funnel-Retention-Revenue-Drivers">GitHub ↗</a>
+</div>
+</nav>
+</header>
+<main id="main">
+<section class="container detail-hero">
+<p class="breadcrumb">
+<a href="../index.html">Home</a> / Projects / E-Commerce</p>
+<p class="eyebrow">Product Analytics · Business Analysis</p>
+<h1 class="project-title">E-Commerce Product Analytics</h1>
+<p class="lede">Conversion funnel, retention, and revenue-driver analysis that turns customer friction into testable action.</p>
+<div class="button-row">
+<a class="button" href="#insights">View insights ↓</a>
+<a class="button secondary" href="https://github.com/ml20g2l/E-Commerce-Product-Analyics-Conversion-Funnel-Retention-Revenue-Drivers">View GitHub ↗</a>
+</div>
+</section>
+<div class="container evidence-strip">
+<div class="evidence-item">
+<span>Role</span>
+<strong>Product Analyst · Data Analyst</strong>
+</div>
+<div class="evidence-item">
+<span>Tools</span>
+<strong>PostgreSQL · Python · Power BI</strong>
+</div>
+<div class="evidence-item">
+<span>Scale</span>
+<strong>4.3M sessions</strong>
+</div>
+<div class="evidence-item">
+<span>Purchase</span>
+<strong>157K sessions</strong>
+</div>
+<div class="evidence-item">
+<span>Opportunity</span>
+<strong>310,249 high-intent losses</strong>
+</div>
+</div>
+<section class="section">
+<div class="container approach-impact">
+<div>
+<p class="eyebrow">My approach</p>
+<div class="approach-steps">
+<article class="approach-step">
+<div>
+<h3>Model the journey at session grain</h3>
+<p>I transformed raw events into governed session, funnel, cohort, and customer-behaviour marts.</p>
+</div>
+</article>
+<article class="approach-step">
+<div>
+<h3>Separate association from causation</h3>
+<p>I used statistical tests and power checks without treating historical behaviour as proven uplift.</p>
+</div>
+</article>
+<article class="approach-step">
+<div>
+<h3>Convert opportunity into experiments</h3>
+<p>I specified five tests with hypotheses, primary metrics, guardrails, and decision rules.</p>
+</div>
+</article>
+</div>
+</div>
+<aside class="impact-panel">
+<p class="eyebrow">Business impact</p>
+<h2>Converted lost intent into a prioritised test roadmap.</h2>
+<span class="impact-number">5 tests</span>
+<p>The analysis found 310,249 high-intent and 147,445 high-exploration lost sessions and linked them to specific interventions.</p>
+<p>Directional revenue ranges were approximately £3.8K–£103.4K per test.</p>
+<p class="impact-boundary">Evidence boundary: this is a personal portfolio project. Revenue figures are estimates, not actual business revenue.</p>
+</aside>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">Customer journey</p>
+<h2>Find where intent stops.</h2>
+</div>
+<p class="section-intro">The analysis separates browsing, high intent, and purchase behaviour.</p>
+</div>
+<div class="architecture-board" role="img" aria-label="Sessions move from product exploration to high intent and then either purchase or lost intent.">
+<div class="architecture-flow">
+<div class="arch-node">
+<span>01</span>4.3M sessions</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>02</span>Product exploration</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>03</span>High intent</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>04</span>Purchase decision</div>
+</div>
+<aside class="orchestration-rail">
+<small>Outcome split</small>
+<h3>Action point</h3>
+<ul>
+<li>157K purchase sessions</li>
+<li>310K high-intent losses</li>
+<li>Form a test</li>
+<li>Measure guardrails</li>
+</ul>
+</aside>
+</div>
+</div>
+</section>
+<section class="section" id="insights">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">Key insights</p>
+<h2>Insight must lead to action.</h2>
+</div>
+<p class="section-intro">Observational evidence supports a test. It does not prove a causal effect.</p>
+</div>
+<div class="decision-list">
+<article class="decision">
+<span>01</span>
+<div>
+<h3>310K high-intent sessions did not convert.</h3>
+<p>Users added several products but did not purchase. <strong>Test:</strong> checkout reassurance.</p>
+</div>
+</article>
+<article class="decision">
+<span>02</span>
+<div>
+<h3>147K high-exploration sessions did not convert.</h3>
+<p>Users explored many products but did not purchase. <strong>Test:</strong> product recommendation support.</p>
+</div>
+</article>
+<article class="decision">
+<span>03</span>
+<div>
+<h3>£50+ products had the lowest view-to-cart rate.</h3>
+<p>The main friction appeared before the cart. <strong>Test:</strong> trust and delivery information.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="dashboard">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">Decision evidence</p>
+<h2>How does analysis become a test?</h2>
+</div>
+<p class="section-intro">The views progress from behaviour to action and then to a measurable experiment.</p>
+</div>
+<div class="dashboard-stories">
+<article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">01 · Behaviour</span>
+<h3>Which behaviours signal purchase intent?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> Conversion is compared across cart, view, exploration, removal, and session-duration bands.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/ecommerce/customer-behaviour.png" alt="Customer behaviour dashboard comparing conversion by cart count, view count, product exploration, removals, and session duration." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>Conversion reaches 24.3% for sessions with 11 or more cart events and 19.4% for 11 or more product explorations.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>High activity identifies intent. It does not prove that increasing activity will cause conversion.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Use high-intent and high-exploration segments to define test audiences.</p>
+</div>
+</div>
+</article>
+<article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">02 · Recommendation</span>
+<h3>Which actions match the friction?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> Each analytical pattern is translated into a specific commercial action area.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/ecommerce/recommendations.png" alt="Business recommendations dashboard for cart abandonment, product discovery, brands, and early retention." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>The analysis points to checkout friction, product discovery, brand concentration, and early retention as distinct opportunities.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>A recommendation remains a hypothesis until a controlled test measures uplift and guardrails.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Convert each action area into a test with one primary metric and explicit risk checks.</p>
+</div>
+</div>
+</article>
+<article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">03 · Experiment plan</span>
+<h3>Which test should run first?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> Opportunity size, expected uplift, revenue range, sample need, and decision rules are shown together.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/ecommerce/experiments.png" alt="Experiment opportunities dashboard with prioritised tests, target segments, expected uplift, revenue impact, sample size, and decision rules." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>The roadmap contains five tests. High-price trust signals have the highest directional revenue potential at about £103K, but require the largest sample.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>Potential value alone does not determine priority. Feasibility, sample size, and guardrails change the order.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Start with a feasible segment, then roll out only when conversion improves and the stated guardrail remains stable.</p>
+</div>
+</div>
+</article>
+</div>
+<p class="asset-note">Source: original Power BI screenshots from the project repository. This is a personal portfolio project; revenue figures are estimates, not actual business revenue.</p>
+</div>
+</section>
+<section class="section">
+<div class="container"><div class="section-head"><div><p class="eyebrow">Related concepts</p><h2>Explore how the analysis becomes a test.</h2></div></div><div class="concept-grid"><article class="concept-card"><p>Journey</p><h3>Funnel analysis</h3><a class="concept-link" href="../concepts/funnel-analysis.html">Explore concept →</a></article><article class="concept-card"><p>Metrics</p><h3>Measurement design</h3><a class="concept-link" href="../concepts/measurement-design.html">Explore concept →</a></article><article class="concept-card"><p>Method</p><h3>Analytical rigour</h3><a class="concept-link" href="../concepts/analytical-rigour.html">Explore concept →</a></article></div></div>
+</section>
+<section class="section">
+<div class="container implementation-proof">
+<div class="implementation-copy">
+<span class="implementation-meta">Implementation proof · SQL</span>
+<h3>Turn behavioural intent into a test audience.</h3>
+<p>The query isolates non-buyers with meaningful cart activity and removes extreme sessions before the segment is used for test design.</p>
+<div class="implementation-actions">
+<a class="button secondary" href="https://github.com/ml20g2l/E-Commerce-Product-Analyics-Conversion-Funnel-Retention-Revenue-Drivers/blob/main/sql/13_high_intent_lost_sessions.sql#L86-L104">View implementation on GitHub ↗</a>
+<button class="button result-toggle" type="button" data-result-toggle aria-expanded="false" aria-controls="ecommerce-segment-result">Show result</button>
+</div>
+</div>
+<pre class="implementation-code" aria-label="SQL high-intent segment excerpt">
+<code>CREATE TABLE high_intent_lost_sessions AS
+SELECT user_session, user_id, session_duration_minutes,
+       cart_count, unique_products_interacted,
+       cart_abandoned_flag
+FROM session_journey
+WHERE converted_flag = 0
+  AND cart_count BETWEEN 3 AND 20
+  AND session_duration_minutes BETWEEN 1 AND 180;</code>
+</pre>
+<div class="code-result-wrap">
+<div class="code-result" id="ecommerce-segment-result" hidden>
+<div class="code-result-head">Result</div>
+<div class="result-grid">
+<div class="result-item">
+<span>Segment size</span>
+<strong class="result-status">310,249 sessions</strong>
+</div>
+<div class="result-item">
+<span>Purchase</span>
+<strong>No</strong>
+</div>
+<div class="result-item">
+<span>Cart additions</span>
+<strong>3–20</strong>
+</div>
+<div class="result-item">
+<span>Session duration</span>
+<strong>1–180 min</strong>
+</div>
+</div>
+<p class="result-note">The filters remove extreme sessions before the audience is used for test design.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-wrap">
+<a href="../index.html#projects">← Selected work</a>
+<span>© <span data-year>
+</span> Geeyoon Lim</span>
+</div>
+</footer>
+</body>
+</html>
+
+

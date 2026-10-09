@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Enterprise Spend Analysis Pipeline case study by Geeyoon Lim.">
+  <title>Enterprise Spend Analysis Pipeline — Geeyoon Lim</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../theme.css">
+  <script src="../script.js" defer>
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Main navigation">
+      <a class="brand" href="../index.html">
+<span class="brand-mark" aria-hidden="true">
+</span>Geeyoon Lim</a>
+      <button class="menu-button" type="button" aria-expanded="false">Menu</button>
+      <div class="nav-links">
+<a href="../index.html#projects">Projects</a>
+<a href="../concepts/index.html">Concepts</a>
+<a href="../index.html#approach">Approach</a>
+</div>
+      <div class="social-links">
+<a href="https://github.com/ml20g2l/Enterprise-Spend-Analysis-Pipeline">GitHub ↗</a>
+<a href="https://uk.linkedin.com/in/geeyoon-lim-6066b61b1">LinkedIn ↗</a>
+</div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="container detail-hero">
+      <p class="breadcrumb">
+<a href="../index.html">Home</a> / Projects / Enterprise Spend Analysis Pipeline</p>
+      <p class="eyebrow">Data Engineering · Analytics Engineering</p>
+      <h1 class="project-title">Enterprise Spend Analysis Pipeline</h1>
+      <p class="lede">A controlled analytics pipeline for spend, contract, vendor, and approval data.</p>
+      <div class="button-row">
+<a class="button" href="#architecture">View architecture ↓</a>
+<a class="button secondary" href="https://github.com/ml20g2l/Enterprise-Spend-Analysis-Pipeline">View GitHub ↗</a>
+</div>
+    </section>
+
+    <div class="container evidence-strip" aria-label="Project evidence">
+      <div class="evidence-item">
+<span>Role</span>
+<strong>Data Engineering · Analytics Engineering</strong>
+</div>
+      <div class="evidence-item">
+<span>Tools</span>
+<strong>Python · MySQL · dbt · Airflow · Docker · Power BI</strong>
+</div>
+      <div class="evidence-item">
+<span>Skills</span>
+<strong>Modelling · ETL · orchestration · validation</strong>
+</div>
+      <div class="evidence-item">
+<span>Scale</span>
+<strong>5,000 expenses · 20,000 events · 125 vendors</strong>
+</div>
+      <div class="evidence-item">
+<span>Outcome</span>
+<strong>17 models · 73 tests · 24/24 checks</strong>
+</div>
+    </div>
+
+    <section class="section">
+      <div class="container approach-impact">
+        <div>
+<p class="eyebrow">My approach</p>
+<div class="approach-steps">
+          <article class="approach-step">
+<div>
+<h3>Separate the data boundaries</h3>
+<p>I kept real DEFRA profiling separate from the fictional corporate analytics path. This prevents synthetic findings from being presented as public-data facts.</p>
+</div>
+</article>
+          <article class="approach-step">
+<div>
+<h3>Govern the transformation</h3>
+<p>I used stable keys, MySQL controls, dbt models, tests, and reporting marts to keep business logic traceable.</p>
+</div>
+</article>
+          <article class="approach-step">
+<div>
+<h3>Test the complete path</h3>
+<p>I used Airflow, reconciliation, freshness checks, and repeat loads before Power BI consumed the marts.</p>
+</div>
+</article>
+        </div>
+</div>
+        <aside class="impact-panel">
+<p class="eyebrow">Business impact</p>
+<h2>Made spend-control risk visible before action.</h2>
+<span class="impact-number">£35.53m</span>
+<p>Real DEFRA duplicates created a 0.62% sensitivity in the published total. The analysis exposed this risk before supplier or concentration conclusions.</p>
+<p>The fictional scenario also prioritised £116.95m without an active matching contract and £44.35m linked to seven high-risk vendors.</p>
+<p class="impact-boundary">Evidence boundary: the £35.53m sensitivity uses real public data. Corporate control findings are deterministic fictional results, not realised savings.</p>
+</aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+<p class="eyebrow">The problem</p>
+<h2>Trust must survive every transformation.</h2>
+</div>
+          <p class="section-intro">Spend data is useful only when users can trust its source, transformation, and totals.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-item">
+<h3>Data quality</h3>
+<p>Duplicate, incomplete, or inconsistent records can change financial totals.</p>
+</article>
+          <article class="problem-item">
+<h3>Pipeline reliability</h3>
+<p>Repeated loads must not create duplicate records.</p>
+</article>
+          <article class="problem-item">
+<h3>Decision use</h3>
+<p>Procurement teams need governed metrics instead of raw transaction tables.</p>
+</article>
+        </div>
+        <p class="prototype-note">Explore the implementation concepts: <a class="concept-link" href="../concepts/dbt-modelling.html">dbt modelling →</a> <a class="concept-link" href="../concepts/airflow-orchestration.html">Airflow orchestration →</a>
+</p>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-head">
+          <div>
+<p class="eyebrow">How the system works</p>
+<h2>One controlled path to reporting.</h2>
+</div>
+          <p class="section-intro">Validation protects the load. dbt owns business logic. Power BI reads governed reporting marts.</p>
+        </div>
+        <div class="architecture-board" role="img" aria-label="Source data moves through validation, MySQL, dbt, reporting marts, and Power BI. Airflow orchestrates the complete pipeline.">
+          <div class="architecture-flow">
+            <div class="arch-node">
+<span>01</span>Source data</div>
+<div class="arch-arrow">↓</div>
+            <div class="arch-node">
+<span>02</span>Validation</div>
+<div class="arch-arrow">↓</div>
+            <div class="arch-node">
+<span>03</span>MySQL</div>
+<div class="arch-arrow">↓</div>
+            <div class="arch-node">
+<span>04</span>dbt</div>
+<div class="arch-arrow">↓</div>
+            <div class="arch-node">
+<span>05</span>Reporting marts</div>
+<div class="arch-arrow">↓</div>
+            <div class="arch-node">
+<span>06</span>Power BI</div>
+          </div>
+          <aside class="orchestration-rail">
+<small>Orchestration layer</small>
+<h3>Airflow</h3>
+<ul>
+<li>Controls dependencies</li>
+<li>Schedules each stage</li>
+<li>Records failures</li>
+<li>Supports safe reruns</li>
+</ul>
+</aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container story-grid">
+        <div class="story-copy">
+<p class="eyebrow">Design decisions</p>
+<h2>The design protects meaning.</h2>
+<p>Each decision controls a specific risk in the path from source data to reporting.</p>
+</div>
+        <div class="decision-list">
+          <article class="decision">
+<span>01</span>
+<div>
+<h3>Why dbt marts feed Power BI</h3>
+<p>Business logic stays in the governed data layer. Power BI does not recreate the same logic.</p>
+</div>
+</article>
+          <article class="decision">
+<span>02</span>
+<div>
+<h3>Why duplicate records are flagged</h3>
+<p>A duplicate can contain valid business information. The pipeline does not remove it without evidence.</p>
+</div>
+</article>
+          <article class="decision">
+<span>03</span>
+<div>
+<h3>Why the load is idempotent</h3>
+<p>A rerun must not change record counts or financial totals. <a class="concept-link" href="../concepts/idempotency.html">Explore idempotency →</a>
+</p>
+</div>
+</article>
+          <article class="decision">
+<span>04</span>
+<div>
+<h3>Why freshness is separate from business date</h3>
+<p>Historical data can be valid even when its business date is old.</p>
+</div>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="concepts-used-title">
+      <div class="container">
+        <div class="section-head">
+<div>
+<p class="eyebrow">Concepts used</p>
+<h2 id="concepts-used-title">Explore the controls behind the system.</h2>
+</div>
+<p class="section-intro">The case study shows where each concept sits. The Concept Library explains how it works.</p>
+</div>
+        <div class="concept-grid">
+          <article class="concept-card">
+<p>Pipeline reliability</p>
+<h3>Idempotency</h3>
+<a class="concept-link" href="../concepts/idempotency.html">Explore concept →</a>
+</article>
+          <article class="concept-card">
+<p>Transformation</p>
+<h3>dbt modelling</h3>
+<a class="concept-link" href="../concepts/dbt-modelling.html">Explore concept →</a>
+</article>
+          <article class="concept-card">
+<p>Orchestration</p>
+<h3>Airflow</h3>
+<a class="concept-link" href="../concepts/airflow-orchestration.html">Explore concept →</a>
+</article>
+          <article class="concept-card">
+<p>Trust</p>
+<h3>Data trust</h3>
+<a class="concept-link" href="../concepts/data-trust.html">Explore concept →</a>
+</article>
+          <article class="concept-card">
+<p>Modelling</p>
+<h3>Analytics modelling</h3>
+<a class="concept-link" href="../concepts/analytics-modelling.html">Explore concept →</a>
+</article>
+          <article class="concept-card">
+<p>Operations</p>
+<h3>Pipeline operations</h3>
+<a class="concept-link" href="../concepts/pipeline-operations.html">Explore concept →</a>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="container">
+        <div class="section-head">
+<div>
+<p class="eyebrow">Decision evidence</p>
+<h2>Question → visual → decision.</h2>
+</div>
+<p class="section-intro">Each Power BI page has one decision job. The screenshot is evidence, not decoration.</p>
+</div>
+        <div class="dashboard-stories">
+          <article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">01 · Portfolio control</span>
+<h3>Where is spend concentrated?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> The KPI row, time trend, currency mix, and ranked bars separate scale, movement, and concentration.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/enterprise/overview.png" alt="Enterprise spend executive overview with spend, contract compliance, monthly trend, department, currency, and vendor visuals." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>£1.16bn spans 5,000 expenses. Contract compliance is 73.20%, and October has the highest monthly spend at £115.55m.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>The overview identifies where to investigate. It does not prove vendor risk or control failure by itself.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Move from the portfolio view to contract and vendor controls before setting an intervention.</p>
+</div>
+</div>
+</article>
+          <article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">02 · Contract control</span>
+<h3>Which control gap needs priority?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> Exposure by department and category is shown with vendor risk, compliance, and a review watchlist.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/enterprise/contract-vendor.png" alt="Contract and vendor performance dashboard with non-compliant spend, high-risk spend, category exposure, vendor performance, and a watchlist." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>£305.92m is non-compliant spend. No active matching contract is the largest cause at £116.95m. Seven high-risk vendors account for £44.35m.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>Non-compliance is not one problem. Contract coverage and high-risk vendor performance require different controls.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Prioritise contract matching and coverage, then review the seven high-risk vendors separately.</p>
+</div>
+</div>
+</article>
+          <article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">03 · Operations</span>
+<h3>Where does approval fail?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> Duration, SLA breaches, priority, and department are combined to separate slow flow from service failure.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/enterprise/approval-operations.png" alt="Approval and operational performance dashboard with cycle time, SLA breaches, monthly trend, department matrix, and heatmap." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>Procurement has the longest mean approval cycle at 64.04 hours. Research has the highest SLA breach rate at 42.04%.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>The departments show different failure patterns. Mean duration and breach rate are not interchangeable.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Investigate workflow delay in Procurement and SLA control in Research. Do not apply one response to both.</p>
+</div>
+</div>
+</article>
+        </div>
+        <p class="asset-note">Source: original Power BI screenshots from the project repository. Figures use the project dataset and evidence boundaries stated above.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">Evidence</p>
+<h2>Controls make the result usable.</h2>
+</div>
+<p class="section-intro">The case study must show both the analytical result and the checks that support it.</p>
+</div>
+<div class="metric-grid">
+<article class="metric">
+<strong>73</strong>
+<p>dbt tests check model quality.</p>
+</article>
+<article class="metric">
+<strong>24 / 24</strong>
+<p>Reconciliation checks compare records and totals.</p>
+</article>
+<article class="metric">
+<strong>Same result</strong>
+<p>A second load keeps valid counts and totals unchanged.</p>
+</article>
+</div>
+</div>
+    </section>
+    <section class="section">
+<div class="container implementation-proof">
+<div class="implementation-copy">
+<span class="implementation-meta">Implementation proof · Python</span>
+<h3>Verify the rerun, not only the first load.</h3>
+<p>The loader runs twice and compares row counts. It stops the pipeline if a rerun changes the result.</p>
+<div class="implementation-actions">
+<a class="button secondary" href="https://github.com/ml20g2l/Enterprise-Spend-Analysis-Pipeline/blob/main/src/ingestion/load_mysql.py#L203-L210">View implementation on GitHub ↗</a>
+<button class="button result-toggle" type="button" data-result-toggle aria-expanded="false" aria-controls="enterprise-load-result">Show result</button>
+</div>
+</div>
+<pre class="implementation-code" aria-label="Python idempotency verification excerpt">
+<code>first_counts = load_once(connection, project_root)
+report = {&quot;first_run_counts&quot;: first_counts}
+if args.verify_idempotency:
+    second_counts = load_once(connection, project_root)
+    report[&quot;second_run_counts&quot;] = second_counts
+    report[&quot;idempotency_verified&quot;] = first_counts == second_counts
+    if not report[&quot;idempotency_verified&quot;]:
+        raise RuntimeError(&quot;Row counts changed on rerun&quot;)</code>
+</pre>
+<div class="code-result-wrap">
+<div class="code-result" id="enterprise-load-result" hidden>
+<div class="code-result-head">Result</div>
+<div class="result-grid">
+<div class="result-item">
+<span>Status</span>
+<strong class="result-status">PASS</strong>
+</div>
+<div class="result-item">
+<span>Expense rows</span>
+<strong>5,000 → 5,000</strong>
+</div>
+<div class="result-item">
+<span>Approval events</span>
+<strong>20,000 → 20,000</strong>
+</div>
+<div class="result-item">
+<span>Total spend</span>
+<strong>£1.1609bn → £1.1609bn</strong>
+</div>
+</div>
+<p class="result-note">First load → second load. Row counts and the reconciled GBP total remained unchanged.</p>
+</div>
+</div>
+</div>
+</section>
+  </main>
+  <footer class="site-footer">
+<div class="container footer-wrap">
+<a href="../index.html">← Back to selected work</a>
+<span>© <span data-year>
+</span> Geeyoon Lim</span>
+</div>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A visual explanation of idempotency and its use in Enterprise Spend.">
+  <title>Idempotency — Geeyoon Lim</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../theme.css">
+  <script src="../script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Main navigation">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span>Geeyoon Lim</a>
+      <button class="menu-button" type="button" aria-expanded="false">Menu</button>
+      <div class="nav-links"><a href="../index.html#projects">Projects</a><a href="index.html">Concepts</a><a href="../index.html#approach">Approach</a></div>
+      <div class="social-links"><a href="https://github.com/ml20g2l">GitHub ↗</a><a href="https://uk.linkedin.com/in/geeyoon-lim-6066b61b1">LinkedIn ↗</a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="container detail-hero">
+      <p class="breadcrumb"><a href="../index.html">Home</a> / Concepts / Idempotency</p>
+      <p class="eyebrow">Pipeline reliability</p>
+      <h1>One valid result after every rerun.</h1>
+      <p class="lede">A repeated pipeline run produces the same valid result.</p>
+    </section>
+
+    <section class="section">
+      <div class="container story-grid">
+        <div class="story-copy"><p class="eyebrow">Visual model</p><h2>Two runs. One result.</h2><p>A failed job can require a rerun. The rerun must not create duplicate data or change valid totals.</p></div>
+        <div class="concept-visual" role="img" aria-label="Run one and run two both produce the same valid result.">
+          <div class="rerun-flow"><div class="run-box"><small>First execution</small><h3>Run 1</h3></div><div class="arrow">→</div><div class="result-box"><small>Controlled output</small><h3>Valid result</h3></div><div class="arrow">←</div><div class="run-box"><small>Repeated execution</small><h3>Run 2</h3></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container concept-facts">
+        <article class="fact"><p class="eyebrow">Why it matters</p><h3>Recovery must be safe.</h3><p>A pipeline can fail after it writes some data. A safe rerun does not add the same records again.</p></article>
+        <article class="fact"><p class="eyebrow">Implementation</p><h3>Use stable keys and upserts.</h3><p>The load matches an incoming record to a stable business key. It inserts or updates the correct record.</p></article>
+        <article class="fact"><p class="eyebrow">Evidence</p><h3>Compare both executions.</h3><p>The second load produces the same row counts and financial totals.</p></article>
+        <article class="fact"><p class="eyebrow">Used in</p><h3>Enterprise Spend</h3><p>The spend pipeline uses this control for repeatable loads.</p><a class="concept-link" href="../projects/enterprise-spend.html">View project evidence →</a></article>
+      </div>
+    </section>
+
+    <section class="section"><div class="container"><div class="evidence-callout"><strong>Control statement</strong><p>A rerun must not change a valid result.</p></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-wrap"><a href="../index.html#concepts">← Back to concepts</a><span>© <span data-year></span> Geeyoon Lim</span></div></footer>
+</body>
+</html>

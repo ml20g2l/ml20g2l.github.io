@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Macro-Financial Datasets case study.">
+<title>Macro-Financial Datasets — Geeyoon Lim</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../theme.css">
+<script src="../script.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<nav class="nav-wrap" aria-label="Main navigation">
+<a class="brand" href="../index.html">
+<span class="brand-mark" aria-hidden="true">
+</span>Geeyoon Lim</a>
+<button class="menu-button" type="button" aria-expanded="false">Menu</button>
+<div class="nav-links">
+<a href="../index.html#projects">Projects</a>
+<a href="../concepts/index.html">Concepts</a>
+<a href="../index.html#approach">Approach</a>
+</div>
+<div class="social-links">
+<a href="https://github.com/ml20g2l/Macro-Financial-Datasets">GitHub ↗</a>
+</div>
+</nav>
+</header>
+<main id="main">
+<section class="container detail-hero">
+<p class="breadcrumb">
+<a href="../index.html">Home</a> / Projects / Macro-Financial</p>
+<p class="eyebrow">Statistical Analytics · Data Validation</p>
+<h1 class="project-title">Macro-Financial Datasets</h1>
+<p class="lede">A regime analysis that tests bias, threshold sensitivity, uncertainty, and cross-system agreement.</p>
+<div class="button-row">
+<a class="button" href="#validation">View validation ↓</a>
+<a class="button secondary" href="https://github.com/ml20g2l/Macro-Financial-Datasets">View GitHub ↗</a>
+</div>
+</section>
+<div class="container evidence-strip">
+<div class="evidence-item">
+<span>Role</span>
+<strong>Data Analyst</strong>
+</div>
+<div class="evidence-item">
+<span>Tools</span>
+<strong>Python · PostgreSQL · Tableau</strong>
+</div>
+<div class="evidence-item">
+<span>Sample</span>
+<strong>1,111 trading days</strong>
+</div>
+<div class="evidence-item">
+<span>Stability</span>
+<strong>6 threshold combinations</strong>
+</div>
+<div class="evidence-item">
+<span>Control</span>
+<strong>5,000 resamples</strong>
+</div>
+</div>
+<section class="section">
+<div class="container approach-impact">
+<div>
+<p class="eyebrow">My approach</p>
+<div class="approach-steps">
+<article class="approach-step">
+<div>
+<h3>Prevent look-ahead bias</h3>
+<p>I applied a one-day prior-close signal lag before assigning each regime.</p>
+</div>
+</article>
+<article class="approach-step">
+<div>
+<h3>Challenge the classification</h3>
+<p>I tested six VIX and yield threshold combinations and compared asset metrics by regime.</p>
+</div>
+</article>
+<article class="approach-step">
+<div>
+<h3>Make uncertainty visible</h3>
+<p>I used 5,000 moving-block bootstrap resamples and reconciled outputs across Python and PostgreSQL.</p>
+</div>
+</article>
+</div>
+</div>
+<aside class="impact-panel">
+<p class="eyebrow">Business impact</p>
+<h2>Made the evidence safe to use in an investment discussion.</h2>
+<span class="impact-number">0 discrepancies</span>
+<p>All 24 metric and correlation outputs agreed across Python and PostgreSQL. Sensitivity tests showed which findings were stable and which depended on thresholds.</p>
+<p class="impact-boundary">Evidence boundary: no monetary impact, forecast, optimisation result, or investment recommendation is claimed.</p>
+</aside>
+</div>
+</section>
+<section class="section" id="validation">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">Analytical trust</p>
+<h2>A result is useful only when the method is stable.</h2>
+</div>
+<p class="section-intro">The validation path challenges the finding before it is presented.</p>
+</div>
+<div class="architecture-board" role="img" aria-label="Time-series data pass through a one-day lag, regime classification, sensitivity tests, bootstrap uncertainty, and Python to PostgreSQL reconciliation.">
+<div class="architecture-flow">
+<div class="arch-node">
+<span>01</span>Time-series data</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>02</span>One-day lag</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>03</span>Regime classification</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>04</span>Sensitivity tests</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>05</span>Bootstrap uncertainty</div>
+<div class="arch-arrow">↓</div>
+<div class="arch-node">
+<span>06</span>System reconciliation</div>
+</div>
+<aside class="orchestration-rail">
+<small>Controls</small>
+<h3>Method check</h3>
+<ul>
+<li>Prevent look-ahead bias</li>
+<li>Test six thresholds</li>
+<li>Measure uncertainty</li>
+<li>Compare Python and SQL</li>
+</ul>
+</aside>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="decision-path">
+<article class="path-step">
+<span>FINDING</span>
+<h3>GLD led in Tightening.</h3>
+<p>The initial result identifies a regime relationship.</p>
+</article>
+<article class="path-step">
+<span>CHALLENGE</span>
+<h3>Does one threshold create it?</h3>
+<p>Six threshold combinations test the classification.</p>
+</article>
+<article class="path-step">
+<span>RESULT</span>
+<h3>The pattern remained consistent.</h3>
+<p>The stability test supports the descriptive finding.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="dashboard">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">Decision evidence</p>
+<h2>Which findings survive challenge?</h2>
+</div>
+<p class="section-intro">Point estimates are shown with method controls and uncertainty, not presented as forecasts.</p>
+</div>
+<div class="dashboard-stories">
+<article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">01 · Regime comparison</span>
+<h3>How did assets behave by regime?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> Return, risk, drawdown, Sharpe ratio, and correlation are read together across four lagged regimes.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/macro/regime-dashboard.png" alt="Macro regime dashboard comparing annualised return, Sharpe ratio, volatility, drawdown, and correlations for SPY, IEF, and GLD." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>GLD has the highest Sharpe ratio at 1.95 in Elevated risk. SPY has the deepest maximum drawdown at −13.3% in the same regime.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>No single metric defines performance. Return must be read with volatility, drawdown, and cross-asset behaviour.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Use the dashboard to select claims for robustness checks, not to issue an investment recommendation.</p>
+</div>
+</div>
+</article>
+<article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">02 · Point estimate</span>
+<h3>Which regime differences are largest?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> A common return view makes direction and magnitude easy to compare before testing uncertainty.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/macro/annualized-returns.png" alt="Annualised stored-close returns for SPY, IEF, and GLD across calm, tightening, elevated-risk, and stress regimes." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>SPY is 66.8% annualised in Stress, while IEF and GLD are −20.9% and −22.1%. GLD is 31.5% in Elevated risk.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>These are descriptive annualised sample means. The Stress estimate can be unstable because regime samples are limited.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Do not use magnitude alone. Check sensitivity and sampling uncertainty before retaining the claim.</p>
+</div>
+</div>
+</article>
+<article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">03 · Uncertainty</span>
+<h3>How precise are the estimates?</h3>
+</div>
+<p class="dashboard-story-purpose">
+<strong>Why this visual exists.</strong> Moving-block bootstrap intervals preserve short time dependence and expose imprecise regime estimates.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/macro/bootstrap-intervals.png" alt="Annualised return estimates with 95 percent moving-block bootstrap intervals by asset and macro regime." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>Several intervals cross zero, and Stress intervals are especially wide across assets.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>The point estimate can look strong while uncertainty remains too large for a confident directional claim.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Report ranges and evidence limits. Treat the analysis as descriptive, not predictive.</p>
+</div>
+</div>
+</article>
+</div>
+<p class="asset-note">Source: original project dashboard and figures. Intervals use 5,000 deterministic moving-block resamples and are not forecast ranges.</p>
+</div>
+</section>
+<section class="section">
+<div class="container"><div class="section-head"><div><p class="eyebrow">Related concepts</p><h2>Explore how the result is challenged.</h2></div></div><div class="concept-grid"><article class="concept-card"><p>Method</p><h3>Analytical rigour</h3><a class="concept-link" href="../concepts/analytical-rigour.html">Explore concept →</a></article><article class="concept-card"><p>Trust</p><h3>Data trust</h3><a class="concept-link" href="../concepts/data-trust.html">Explore concept →</a></article><article class="concept-card"><p>Metrics</p><h3>Measurement design</h3><a class="concept-link" href="../concepts/measurement-design.html">Explore concept →</a></article></div></div>
+</section>
+<section class="section">
+<div class="container implementation-proof">
+<div class="implementation-copy">
+<span class="implementation-meta">Implementation proof · Python</span>
+<h3>Lag the signal before classifying the return.</h3>
+<p>The regime uses information available at the previous close. This prevents the current return from using a same-day closing signal.</p>
+<a class="button secondary" href="https://github.com/ml20g2l/Macro-Financial-Datasets/blob/main/src/build_analysis.py#L112-L125">View implementation on GitHub ↗</a>
+</div>
+<pre class="implementation-code" aria-label="Python prior-close signal excerpt">
+<code>result[&quot;dgs10_change_63d_pp&quot;] = (
+    result[&quot;dgs10&quot;] - result[&quot;dgs10&quot;].shift(YIELD_LOOKBACK_DAYS)
+)
+result[&quot;signal_vix&quot;] = result[&quot;vix&quot;].shift(1)
+result[&quot;signal_dgs10&quot;] = result[&quot;dgs10&quot;].shift(1)
+result[&quot;signal_dgs10_change_63d_pp&quot;] = (
+    result[&quot;dgs10_change_63d_pp&quot;].shift(1)
+)</code>
+</pre>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-wrap">
+<a href="../index.html#projects">← Selected work</a>
+<span>© <span data-year>
+</span> Geeyoon Lim</span>
+</div>
+</footer>
+</body>
+</html>
+
+

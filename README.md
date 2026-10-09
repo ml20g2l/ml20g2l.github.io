@@ -1,13 +1,25 @@
-# Geeyoon Lim — Portfolio
+# Geeyoon Lim — Data Portfolio
 
-Portfolio website for data analysis, analytics engineering, data engineering, and AI analytics projects.
+A portfolio of data analysis, analytics engineering, data engineering, and AI analytics work.
 
-Live site: https://ml20g2l.github.io
+## Live site
 
-## Structure
+**https://ml20g2l.github.io/**
 
-- Five project case studies
-- Dashboard evidence linked to business questions and decisions
-- A concept library connected to project implementation
-- Responsive static HTML, CSS, and JavaScript
+## What the portfolio shows
 
+- Five evidence-based project case studies
+- The approach and business impact for each project
+- Dashboard views structured as question, visual, finding, and decision
+- Short implementation examples with links to the source repositories
+- A concept library connected to real project evidence
+
+## Featured projects
+
+1. Enterprise Spend Analysis Pipeline
+2. E-Commerce Product Analytics
+3. NHS Workforce Capacity and Service Delivery Reporting
+4. AI-Augmented Customer Support Operations Analytics
+5. Macro-Financial Datasets
+
+The site uses responsive HTML, CSS, and JavaScript and is hosted with GitHub Pages.

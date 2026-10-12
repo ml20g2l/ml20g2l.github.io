@@ -36,7 +36,7 @@
 <a href="../index.html">Home</a> / Projects / Enterprise Spend Analysis Pipeline</p>
       <p class="eyebrow">Data Engineering · Analytics Engineering</p>
       <h1 class="project-title">Enterprise Spend Analysis Pipeline</h1>
-      <p class="lede">A controlled analytics pipeline for spend, contract, vendor, and approval data.</p>
+      <p class="lede">A controlled analytics pipeline with governed reporting and operational freshness monitoring.</p>
       <div class="button-row">
 <a class="button" href="#architecture">View architecture ↓</a>
 <a class="button secondary" href="https://github.com/ml20g2l/Enterprise-Spend-Analysis-Pipeline">View GitHub ↗</a>
@@ -50,11 +50,11 @@
 </div>
       <div class="evidence-item">
 <span>Tools</span>
-<strong>Python · MySQL · dbt · Airflow · Docker · Power BI</strong>
+<strong>Python · MySQL · dbt · Airflow · Power BI · Grafana · Streamlit</strong>
 </div>
       <div class="evidence-item">
 <span>Skills</span>
-<strong>Modelling · ETL · orchestration · validation</strong>
+<strong>Modelling · ETL · orchestration · validation · monitoring</strong>
 </div>
       <div class="evidence-item">
 <span>Scale</span>
@@ -62,7 +62,7 @@
 </div>
       <div class="evidence-item">
 <span>Outcome</span>
-<strong>17 models · 73 tests · 24/24 checks</strong>
+<strong>17 models · 73 tests · 6/6 freshness rules</strong>
 </div>
     </div>
 
@@ -85,8 +85,8 @@
 </article>
           <article class="approach-step">
 <div>
-<h3>Test the complete path</h3>
-<p>I used Airflow, reconciliation, freshness checks, and repeat loads before Power BI consumed the marts.</p>
+<h3>Test and observe the complete path</h3>
+<p>I used Airflow, reconciliation, freshness checks, and repeat loads before reporting. Grafana and Streamlit read the same governed monitoring views.</p>
 </div>
 </article>
         </div>
@@ -121,11 +121,11 @@
 <p>Repeated loads must not create duplicate records.</p>
 </article>
           <article class="problem-item">
-<h3>Decision use</h3>
-<p>Procurement teams need governed metrics instead of raw transaction tables.</p>
+<h3>Operational visibility</h3>
+<p>A failed or stale load must be visible before users act on the reporting output.</p>
 </article>
         </div>
-        <p class="prototype-note">Explore the implementation concepts: <a class="concept-link" href="../concepts/dbt-modelling.html">dbt modelling →</a> <a class="concept-link" href="../concepts/airflow-orchestration.html">Airflow orchestration →</a>
+        <p class="prototype-note">Explore the implementation concepts: <a class="concept-link" href="../concepts/dbt-modelling.html">dbt modelling →</a> <a class="concept-link" href="../concepts/airflow-orchestration.html">Airflow orchestration →</a> <a class="concept-link" href="../concepts/data-freshness.html">Data freshness →</a>
 </p>
       </div>
     </section>
@@ -135,11 +135,11 @@
         <div class="section-head">
           <div>
 <p class="eyebrow">How the system works</p>
-<h2>One controlled path to reporting.</h2>
+<h2>One controlled path to reporting and monitoring.</h2>
 </div>
-          <p class="section-intro">Validation protects the load. dbt owns business logic. Power BI reads governed reporting marts.</p>
+          <p class="section-intro">Power BI reads governed business marts. Grafana and Streamlit read separate freshness audit views.</p>
         </div>
-        <div class="architecture-board" role="img" aria-label="Source data moves through validation, MySQL, dbt, reporting marts, and Power BI. Airflow orchestrates the complete pipeline.">
+        <div class="architecture-board" role="img" aria-label="Source data moves through validation, MySQL, dbt, reporting marts, and Power BI. Airflow orchestrates the pipeline and writes freshness audit results that feed Grafana and Streamlit.">
           <div class="architecture-flow">
             <div class="arch-node">
 <span>01</span>Source data</div>
@@ -160,12 +160,12 @@
 <span>06</span>Power BI</div>
           </div>
           <aside class="orchestration-rail">
-<small>Orchestration layer</small>
-<h3>Airflow</h3>
+<small>Operations layer</small>
+<h3>Airflow + monitoring</h3>
 <ul>
 <li>Controls dependencies</li>
-<li>Schedules each stage</li>
-<li>Records failures</li>
+<li>Writes freshness audit results</li>
+<li>Feeds Grafana + Streamlit</li>
 <li>Supports safe reruns</li>
 </ul>
 </aside>
@@ -207,7 +207,7 @@
 <span>04</span>
 <div>
 <h3>Why freshness is separate from business date</h3>
-<p>Historical data can be valid even when its business date is old.</p>
+<p>Historical data can be valid even when its business date is old. The monitor tests load recency and period completeness as separate controls. <a class="concept-link" href="../concepts/data-freshness.html">Explore data freshness →</a></p>
 </div>
 </article>
         </div>
@@ -254,6 +254,11 @@
 <h3>Pipeline operations</h3>
 <a class="concept-link" href="../concepts/pipeline-operations.html">Explore concept →</a>
 </article>
+          <article class="concept-card">
+<p>Monitoring</p>
+<h3>Data freshness</h3>
+<a class="concept-link" href="../concepts/data-freshness.html">Explore concept →</a>
+</article>
         </div>
       </div>
     </section>
@@ -265,7 +270,7 @@
 <p class="eyebrow">Decision evidence</p>
 <h2>Question → visual → decision.</h2>
 </div>
-<p class="section-intro">Each Power BI page has one decision job. The screenshot is evidence, not decoration.</p>
+<p class="section-intro">Business and monitoring views each have one decision job. Every screenshot is evidence, not decoration.</p>
 </div>
         <div class="dashboard-stories">
           <article class="dashboard-story">
@@ -349,8 +354,60 @@
 </div>
 </div>
 </article>
+          <article class="dashboard-story" id="monitoring">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">04 · Pipeline health</span>
+<h3>Is the latest pipeline output safe to use?</h3>
+</div>
+<p class="dashboard-story-purpose"><strong>Why this visual exists.</strong> Grafana combines overall status, load age, rule results, recent runs, and failure history in one operational view.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/enterprise/freshness-grafana.png" alt="Grafana data freshness dashboard showing a healthy pipeline, six passed checks, zero failed checks, load age, recent runs, and rule results." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>The first live setup check detected an operational load age of 243.662 hours. After a controlled reload, the latest run passed all six rules with zero failures.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>The monitor detects stale delivery without treating the fixed historical business period as a live-feed failure.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Pause use when a critical rule fails. Refresh the controlled load, rerun the checks, and confirm recovery before reporting continues.</p>
+</div>
+</div>
+</article>
+          <article class="dashboard-story">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">05 · Rule evidence</span>
+<h3>Can an analyst inspect the same controls without Grafana?</h3>
+</div>
+<p class="dashboard-story-purpose"><strong>Why this visual exists.</strong> Streamlit provides a lightweight Python view of the same governed MySQL monitoring contract.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/enterprise/freshness-streamlit.png" alt="Streamlit data freshness dashboard showing current status, six rule results, observed and expected values, and monitoring-run history." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>The application query returned PASS, six passed rules, zero failed rules, and six rule-level evidence rows.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>Grafana and Streamlit do not calculate freshness independently. Both read four shared, read-only MySQL views.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Use Grafana for continuous local operations and Streamlit for transparent inspection and demonstration.</p>
+</div>
+</div>
+</article>
         </div>
-        <p class="asset-note">Source: original Power BI screenshots from the project repository. Figures use the project dataset and evidence boundaries stated above.</p>
+        <p class="asset-note">Source: original Power BI, Grafana, and Streamlit screenshots from the project repository. Figures use the project dataset and evidence boundaries stated above.</p>
       </div>
     </section>
 
@@ -373,8 +430,8 @@
 <p>Reconciliation checks compare records and totals.</p>
 </article>
 <article class="metric">
-<strong>Same result</strong>
-<p>A second load keeps valid counts and totals unchanged.</p>
+<strong>6 / 6</strong>
+<p>Freshness rules passed after failure detection and controlled recovery.</p>
 </article>
 </div>
 </div>

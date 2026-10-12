@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A visual explanation of operational freshness, period completeness, and monitoring evidence.">
+  <title>Data Freshness — Geeyoon Lim</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../theme.css">
+  <script src="../script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="nav-wrap" aria-label="Main navigation"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span>Geeyoon Lim</a><button class="menu-button" type="button" aria-expanded="false">Menu</button><div class="nav-links"><a href="../index.html#projects">Projects</a><a href="index.html">Concepts</a><a href="../index.html#approach">Approach</a></div><div class="social-links"><a href="https://github.com/ml20g2l">GitHub ↗</a><a href="https://uk.linkedin.com/in/geeyoon-lim-6066b61b1">LinkedIn ↗</a></div></nav></header>
+  <main id="main">
+    <section class="container detail-hero"><p class="breadcrumb"><a href="index.html">Concepts</a> / Data freshness</p><p class="eyebrow">Data operations</p><h1 class="project-title">Freshness is not the latest business date.</h1><p class="lede">A historical dataset can be complete and current as a delivery even when its latest transaction date is old.</p></section>
+
+    <section class="section"><div class="container story-grid"><div class="story-copy"><p class="eyebrow">Visual model</p><h2>Test recency and coverage separately.</h2><p>Operational freshness checks when the pipeline loaded the data. Period completeness checks whether the declared reporting window is intact.</p><div class="concept-terms"><span class="concept-term">Load recency</span><span class="concept-term">Period completeness</span><span class="concept-term">Audit history</span></div></div><div class="concept-visual" role="img" aria-label="Operational load recency and historical period completeness are tested separately before they form one monitoring status."><div class="concept-branches"><div class="concept-branch"><strong>Operational freshness</strong><p>Time since the latest successful idempotent load.</p></div><div class="concept-gate">Separate rules</div><div class="concept-branch"><strong>Period completeness</strong><p>Source, FX, and marts cover the declared period.</p></div></div><div class="concept-flow" style="margin-top:1rem"><div class="concept-stage"><small>Evidence</small><strong>Observed + expected values</strong></div><div class="concept-arrow">→</div><div class="concept-stage"><small>Audit</small><strong>Run and rule history</strong></div><div class="concept-arrow">→</div><div class="concept-stage"><small>Consumers</small><strong>Grafana + Streamlit</strong></div></div></div></div></section>
+
+    <section class="section"><div class="container concept-facts"><article class="fact"><p class="eyebrow">Operational freshness</p><h3>Is the delivery current?</h3><p>Measure elapsed time from the latest successful load. Do not use the transaction date as a substitute.</p></article><article class="fact"><p class="eyebrow">Period completeness</p><h3>Is the declared window intact?</h3><p>Test source dates, FX coverage, mart boundaries, and expected monthly partitions.</p></article><article class="fact"><p class="eyebrow">Shared contract</p><h3>Calculate once.</h3><p>Store monitoring facts in governed views. Dashboard tools read the result instead of rebuilding the rules.</p></article><article class="fact"><p class="eyebrow">Recovery evidence</p><h3>Prove the control can fail.</h3><p>The first live check detected a 243.662-hour stale load. A controlled reload restored a 6/6 pass.</p></article></div></section>
+
+    <section class="section"><div class="container"><p class="eyebrow">Where I used it</p><div class="concept-projects"><article class="concept-project"><span>Enterprise Spend</span><h3>Airflow audit record</h3><p>Each run writes overall status and rule-level evidence to MySQL.</p><a class="concept-link" href="../projects/enterprise-spend.html#architecture">View architecture →</a></article><article class="concept-project"><span>Enterprise Spend</span><h3>Grafana operations view</h3><p>The primary local dashboard shows current health, run history, and failed checks.</p><a class="concept-link" href="../projects/enterprise-spend.html#monitoring">View evidence →</a></article><article class="concept-project"><span>Enterprise Spend</span><h3>Streamlit inspection view</h3><p>A read-only Python application exposes the same observed and expected values.</p><a class="concept-link" href="../projects/enterprise-spend.html#monitoring">View evidence →</a></article></div></div></section>
+
+    <section class="section"><div class="container evidence-callout"><p class="eyebrow">Implementation evidence</p><h2>Four views. Two consumers. One definition.</h2><p><code>vw_freshness_latest_run</code> and <code>vw_freshness_latest_results</code> support the current state. History views support trend and audit analysis. Grafana and Streamlit have no write action.</p><p><a class="concept-link" href="https://github.com/ml20g2l/Enterprise-Spend-Analysis-Pipeline/blob/main/docs/monitoring_dashboards.md">View monitoring implementation on GitHub →</a></p></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-wrap"><a href="index.html">← Concept Library</a><span>© <span data-year></span> Geeyoon Lim</span></div></footer>
+</body>
+</html>

@@ -11,6 +11,7 @@ A portfolio of data analysis, analytics engineering, data engineering, and AI an
 - Five evidence-based project case studies
 - The approach and business impact for each project
 - Dashboard views structured as question, visual, finding, and decision
+- Business reporting and operational monitoring evidence from Power BI, Grafana, and Streamlit
 - Short implementation examples with links to the source repositories
 - A concept library connected to real project evidence
 

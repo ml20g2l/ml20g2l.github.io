@@ -86,7 +86,7 @@
           <article class="approach-step">
 <div>
 <h3>Test and observe the complete path</h3>
-<p>I used Airflow, reconciliation, freshness checks, and repeat loads before reporting. Grafana and Streamlit read the same governed monitoring views.</p>
+<p>I used Airflow, reconciliation, freshness checks, and repeat loads before reporting. The Power BI monitoring page, Grafana, and Streamlit read the same governed monitoring views.</p>
 </div>
 </article>
         </div>
@@ -137,9 +137,9 @@
 <p class="eyebrow">How the system works</p>
 <h2>One controlled path to reporting and monitoring.</h2>
 </div>
-          <p class="section-intro">Power BI reads governed business marts. Grafana and Streamlit read separate freshness audit views.</p>
+          <p class="section-intro">Power BI business pages read governed marts. The Power BI monitoring page, Grafana, and Streamlit read separate freshness audit views.</p>
         </div>
-        <div class="architecture-board" role="img" aria-label="Source data moves through validation, MySQL, dbt, reporting marts, and Power BI. Airflow orchestrates the pipeline and writes freshness audit results that feed Grafana and Streamlit.">
+        <div class="architecture-board" role="img" aria-label="Source data moves through validation, MySQL, dbt, reporting marts, and Power BI. Airflow orchestrates the pipeline and writes freshness audit results that feed the Power BI monitoring page, Grafana, and Streamlit.">
           <div class="architecture-flow">
             <div class="arch-node">
 <span>01</span>Source data</div>
@@ -165,7 +165,7 @@
 <ul>
 <li>Controls dependencies</li>
 <li>Writes freshness audit results</li>
-<li>Feeds Grafana + Streamlit</li>
+<li>Feeds Power BI + Grafana + Streamlit</li>
 <li>Supports safe reruns</li>
 </ul>
 </aside>
@@ -357,7 +357,33 @@
           <article class="dashboard-story" id="monitoring">
 <div class="dashboard-story-head">
 <div>
-<span class="dashboard-story-number">04 · Pipeline health</span>
+<span class="dashboard-story-number">04 · Reporting readiness</span>
+<h3>Is the latest recorded output ready for reporting?</h3>
+</div>
+<p class="dashboard-story-purpose"><strong>Why this visual exists.</strong> The Power BI monitoring page places load recency, rule coverage, recent runs, and rule-level evidence beside the governed business report.</p>
+</div>
+<figure class="dashboard-frame">
+<img src="../assets/dashboards/enterprise/freshness-powerbi.png" alt="Power BI data freshness and pipeline health page showing a passing status, six passed rules, zero failures, load age, recent runs, severity coverage, and rule evidence." loading="lazy">
+</figure>
+<div class="dashboard-reading">
+<div>
+<span>Finding</span>
+<p>The latest recorded check passed all six freshness rules with zero failures and a 0.00-hour load age.</p>
+</div>
+<div>
+<span>Interpretation</span>
+<p>The page confirms reporting readiness at the recorded check time. It is an imported audit snapshot, not a live service guarantee.</p>
+</div>
+<div>
+<span>Decision</span>
+<p>Confirm the six control results before using the business pages. Use Grafana when near-real-time operational refresh is required.</p>
+</div>
+</div>
+</article>
+          <article class="dashboard-story" id="grafana-monitoring">
+<div class="dashboard-story-head">
+<div>
+<span class="dashboard-story-number">05 · Pipeline health</span>
 <h3>Is the latest pipeline output safe to use?</h3>
 </div>
 <p class="dashboard-story-purpose"><strong>Why this visual exists.</strong> Grafana combines overall status, load age, rule results, recent runs, and failure history in one operational view.</p>
@@ -383,7 +409,7 @@
           <article class="dashboard-story">
 <div class="dashboard-story-head">
 <div>
-<span class="dashboard-story-number">05 · Rule evidence</span>
+<span class="dashboard-story-number">06 · Rule evidence</span>
 <h3>Can an analyst inspect the same controls without Grafana?</h3>
 </div>
 <p class="dashboard-story-purpose"><strong>Why this visual exists.</strong> Streamlit provides a lightweight Python view of the same governed MySQL monitoring contract.</p>
